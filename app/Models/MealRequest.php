@@ -10,4 +10,8 @@ class MealRequest extends Model
         'name',
         'quantity'
     ];
+
+    function meal(){
+        return $this->belongsTo(Meal::class);
+    }
 }

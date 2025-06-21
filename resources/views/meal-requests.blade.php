@@ -26,7 +26,18 @@
 
     <!-- ********************** main ************************ -->
     <main>
-      
+      <table class="table table-bordered">
+        <tr class="table-info">
+            <th>الكمية </th>
+            <th>اسم الوجبة</th>
+        </tr>
+        @foreach ($mealRequests as $mealRequest)
+        <tr>
+            <td>{{ $mealRequest->quantity }}</td>
+            <td>{{ $mealRequest->meal->name }}</td>
+        </tr>
+        @endforeach
+      </table>
     </main>
     <!-- ********************** footer ************************ -->
     <footer>
