@@ -4,50 +4,49 @@ namespace Database\Seeders;
 
 use App\Models\Meal;
 use App\Models\MealRequest;
+use App\Models\Service;
+use App\Models\ServiceRequest;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class MealSeeder extends Seeder
+class ServiceSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        $meals = [
+        $services = [
             [
                 'id' => 1,
-                'name' => 'Pizza',
+                'name_ar' => 'بيتزا',
+                'name_en' => 'Pizza',
                 'price' => 20000,
             ],
             [
                 'id' => 2,
-                'name' => 'checken',
+                'name_ar' => 'دجاج',
+                'name_en' => 'checken',
                 'price' => 100000,
 
             ],
             [
                 'id' => 3,
-                'name' => 'sandwish',
+                'name_ar' => 'ساندوش',
+                'name_en' => 'sandwish',
                 'price' => 5000,
             ],
 
         ];
-        $mealRequests = [
+        $serviceRequests = [
             [
+                'email' => 'any@one.com',
                 'quantity' => 2,
-                'meal_id' => 1,
+                'service_id' => 1,
             ],
-            [
-                'quantity' => 1,
-                'meal_id' => 2,
-            ],
-            [
-                'quantity' => 3,
-                'meal_id' => 3,
-            ],
+            
         ];
-        Meal::insert($meals);
-        MealRequest::insert($mealRequests);
+        Service::insert($services);
+        ServiceRequest::insert($serviceRequests);
     }
 }

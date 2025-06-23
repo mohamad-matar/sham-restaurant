@@ -26,15 +26,21 @@
 
     <!-- ********************** main ************************ -->
     <main>
+        <h1 class="text-center text-white my-3">الطلبات المعلقة</h1>
       <table class="table table-bordered">
         <tr class="table-info">
             <th>الكمية </th>
             <th>اسم الوجبة</th>
+            <th>ايميل الزبون</th>
+            <th>وقت الطلب</th>
         </tr>
-        @foreach ($mealRequests as $mealRequest)
+        @foreach ($serviceRequests as $serviceRequest)
         <tr>
-            <td>{{ $mealRequest->quantity }}</td>
-            <td>{{ $mealRequest->meal->name }}</td>
+            <td>{{ $serviceRequest->quantity }}</td>
+            <td>{{ $serviceRequest->service->name_ar }}</td>
+            <td>{{ $serviceRequest->email }}</td>
+            <td>{{ $serviceRequest->created_at }}</td>
+            
         </tr>
         @endforeach
       </table>
